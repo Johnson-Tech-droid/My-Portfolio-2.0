@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamau Johnson</title>
+
+  <!-- Fonts & Icons -->
+  <!-- Using the combined font link that includes both Poppins and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function(){
+          emailjs.init({
+              publicKey: "FlWuKSvxhnIfCNxRw",
+          });
+      })();
+  </script>
+  <!-- Embedded CSS -->
+  <style>
+    /* Global Resets and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ecf0f3;
+      color: #333;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ecf0f3;
+      z-index: 100;
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInDownHome 0.8s ease-out both;
+    }
+
+    .logo {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      animation: spin 2s ease-out;
+      margin-left: 20px;
+    }
+
+    .initials {
+      font-size: 65px;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    .fullname {
+      position: absolute;
+      font-size: 12px;
+      color: #555;
+      background-color: white;
+      padding: 2px 10px;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 45px;
+      right: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      font-weight: 600;
+      color: black;
+      padding: 8px 17px;
+      margin: 0 5px;
+      display: inline-block;
+      border-radius: 5px;
+      transition: background-color 0.25s;
+      opacity: 0;
+      animation: fadeInUpHome 0.6s ease-out forwards;
+    }
+
+    .navbar a:nth-child(1) { animation-delay: 0.3s; }
+    .navbar a:nth-child(2) { animation-delay: 0.4s; }
+    .navbar a:nth-child(3) { animation-delay: 0.5s; }
+    .navbar a:nth-child(4) { animation-delay: 0.6s; }
+    .navbar a:nth-child(5) { animation-delay: 0.7s; }
+
+    .navbar a:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    .intro-section {
+      height: calc(100vh - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 215px;
+      padding-bottom: 100;
+      box-sizing: border-box;
+    }
+
+    .intro-container {
+      max-width: 800px;
+      padding: 0 20px;
+      opacity: 0;
+      animation: fadeInHome 0.8s 0.3s ease-out forwards;
+    }
+
+    .intro-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeInUpHome 0.8s 0.4s ease-out forwards;
+    }
+
+    .intro-title .name {
+      color: #007BFF;
+    }
+
+    .intro-subtitle,
+    #typewriter {
+      font-size: 1.8rem;
+      color: #007BFF;
+      font-weight: 600;
+      opacity: 0;
+      animation: fadeInUpHome 0.8s 0.5s ease-out forwards;
+      margin-bottom: 1.2rem;
+    }
+
+    .cursor {
+      animation: blink 1s infinite;
+    }
+    
+    .intro-description {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 20px;
+        line-height: 1.6;
+        opacity: 0;
+        animation: fadeInUpHome 0.8s 0.6s ease-out forwards;
+    }
+    
+    .big-social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .big-social-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 62.5px;
+      height: 62.5px;
+      border-radius: 50%;
+      background: whitesmoke;
+      color: black;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: popIn 0.5s ease forwards;
+    }
+
+    .big-social-circle:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .big-social-circle:nth-child(1) { animation-delay: 0.8s; }
+    .big-social-circle:nth-child(2) { animation-delay: 0.9s; }
+    .big-social-circle:nth-child(3) { animation-delay: 1.0s; }
+    .big-social-circle:nth-child(4) { animation-delay: 1.1s; }
+    .big-social-circle:nth-child(5) { animation-delay: 1.2s; }
+    .big-social-circle:nth-child(6) { animation-delay: 1.3s; }
+
+    @keyframes spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes fadeInHome {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUpHome {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDownHome {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInAbout {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDownAbout {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInRightAbout {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes pulseSlowAbout {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    @keyframes gradientSpinAbout {
+      0% { background-position: 0% 50%; transform: rotate(0deg); }
+      100% { background-position: 100% 50%; transform: rotate(360deg); }
+    }
+
+    #about-section {
+      padding-top: 7.8rem;
+      margin-top: 0px;
+      padding-left: 50px;
+    }
+
+    #about-section h1, 
+    #about-section h2, 
+    #about-section h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #007BFF;
+      margin-block-end: 1rem;
+    }
+
+    #about-section p {
+      color: #555;
+      margin-block-end: 1rem;
+    }
+    
+    #about-section a {
+        color: #0056b3;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+    #about-section a:hover {
+        color: #003d80;
+    }
+
+    .about-header-wrapper {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .about-header-wrapper h1 {
+      color: #007BFF;
+      font-size: 1.3rem;
+      font-weight: 120;
+      margin-bottom: 0.5rem;
+      animation: fadeInDownAbout 1s ease-in-out;
+    }
+
+    .divider-about {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #7E69AB, #007BFF);
+      margin: 0.5rem auto 2rem;
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+
+    .content-about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .bio {
+      flex: 1 1 60%;
+      animation: fadeInAbout 1s ease;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(155, 135, 245, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .section-title {
+      font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .horizontal-line {
+      width: 100%;
+      height: 1px;
+      background: #e1e1e1;
+      margin: 2rem 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: #007BFF;
+      color: white !important;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+      border-radius: 50px;
+      text-decoration: none !important;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .download-btn:hover {
+      background: red;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(155, 135, 245, 0.4);
+    }
+
+    .profile {
+      flex: 1 1 30%;
+      position: relative;
+      animation: slideInRightAbout 1s ease;
+    }
+
+    .profile-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-image-container {
+      position: relative;
+      width: clamp(120px, 25vw, 200px);
+      height: clamp(120px, 25vw, 200px);
+      margin-bottom: 2rem;
+      animation: pulseSlowAbout 3s infinite alternate;
+    }
+
+    .profile-image-container::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,
+        #7E69AB,
+        #9B87F5,
+        #007BFF,
+        #D946EF,
+        #F97316,
+        #0EA5E9,
+        #7E69AB
+      );
+      background-size: 300% 300%;
+      animation: gradientSpinAbout 6s linear infinite;
+      z-index: -1;
+    }
+
+    .profile-image-wrap {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 5px;
+      background: white;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .profile-info {
+      text-align: center;
+      width: 100%;
+      max-width: 380px;
+      padding: 1rem 1.5rem;
+    }
+    .profile-info p.profile-title {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        color: black;
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Achievements Section Styles */
+    #achievements-section {
+      padding-top: 7.8rem;
+      margin-top: 0px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 4rem;
+    }
+
+    .achievements-title {
+      color: #007BFF;
+      font-size: 1.3rem;
+      font-weight: 120;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .achievements-subtitle {
+      color: #111827;
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .achievements-text {
+      margin-bottom: 2.5rem;
+      max-width: 800px;
+      color: #4b5563;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .achievements-text p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .photo-grid {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .photo-card {
+      width: calc(33.333% - 1.35rem);
+      aspect-ratio: 1/1;
+      background-color: #ecf0f3;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 0.7s ease-in-out;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      padding: 1.5rem;
+      color: #ecf0f3;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-card:hover .photo-overlay {
+      opacity: 1;
+    }
+
+    .photo-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .photo-description {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Larger card - Custom sizing */
+    .large-photo-card {
+      width: 100%; /* ✅ You can change width here */
+      max-width: 960px;
+      height: 460px; /* ✅ You can change height here */
+      margin: 2rem auto 0 auto;
+      background-color: #ecf0f3;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 0.7s ease-in-out;
+    }
+
+    .large-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures full fit */
+    }
+
+    .large-photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .large-photo-card .photo-overlay {
+      padding: 2rem;
+      font-size: 1.1rem;
+    }
+
+    /* Video Container Styles */
+    .video-container {
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .video-title {
+      color: #111827;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      background-color: #ecf0f3;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 0.7s ease-in-out;
+      aspect-ratio: 16/9;
+    }
+
+    .video-wrapper:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .achievement-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
+    /* Style for separating list items */
+    ul li {
+      margin-bottom: 2rem; /* Adds space between list items */
+    }
+
+    /* Specific fix for third image */
+    .fit-card {
+      aspect-ratio: unset;
+      height: auto;
+      width: 100%; /* or set a max-width if needed */
+      max-width: 400px;
+    }
+
+    .fit-card img.fit-image {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      background-color: #fff;
+    }
+
+    .align-fit {
+      aspect-ratio: unset;
+      width: calc(33.333% - 1.35rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .align-fit .img-wrapper {
+      width: 100%;
+      background-color: #fff;
+      padding: 0.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .align-fit img.fit-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .star-bullet {
+      list-style: none;
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .star-bullet li::before {
+      content: "";
+      color: #007BFF; /* Star color */
+      font-size: 1rem;
+      margin-right: 3.0rem;
+    }
+
+    .takeaway-heading {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: black;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .star-bullet {
+      list-style: none;
+      padding-left: 0;
+      color: #374151;
+    }
+
+    .star-bullet li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .star-bullet li::before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: black;
+      font-size: 1rem;
+    }
+
+    /* Contact Section Styles */
+    #contact-section {
+      padding-top: 7.8rem;
+      margin-top: 0px;
+      padding-bottom: 4rem;
+    }
+
+    .contact-layout {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Map Section - LEFT SIDE */
+    .map-section {
+      flex: 0 0 35%;
+      max-width: 45%;
+      order: 1;
+    }
+
+    .map-container {
+      background-color: #ecf0f3;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      height: 45%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .map-header {
+      padding: 12px 16px;
+      background-color: #007BFF;
+      color: #ecf0f3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .map-header h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .map-actions {
+      display: flex;
+      gap: 15px;
+    }
+
+    .map-action-btn {
+      background: none;
+      border: none;
+      color: #ecf0f3;
+      cursor: pointer;
+      font-size: 1rem;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .map-action-btn:hover {
+      opacity: 1;
+    }
+
+    .map-frame-container {
+      flex: 1;
+      position: relative;
+      min-height: 300px;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .map-overlay {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: white;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 200px;
+      z-index: 10;
+    }
+
+    .map-overlay h3 {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #007BFF;
+    }
+
+    .map-overlay p {
+      font-size: 0.8rem;
+      color: #767676;
+      margin-bottom: 10px;
+    }
+
+    .directions-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #007BFF;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .directions-btn:hover {
+      background-color: #005a9e;
+    }
+
+    .map-footer {
+      padding: 8px 16px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #d1d1d1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #767676;
+      font-size: 0.8rem;
+    }
+
+    .map-footer-actions {
+      display: flex;
+      gap: 15px;
+    }
+
+    .map-footer-btn {
+      color: #007BFF;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+      font-size: 0.8rem;
+    }
+
+    .map-footer-btn:hover {
+      color: #005a9e;
+      text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      flex: 1;
+      order: 2;
+    }
+
+    .contact-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .contact-header {
+      padding: 20px;
+      border-bottom: 1px solid #d1d1d1;
+    }
+
+    .contact-header h2 {
+      font-size: 1.5rem;
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      color: #767676;
+      font-size: 1rem;
+    }
+
+    .contact-content {
+      padding: 30px 20px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      margin-bottom: 30px;
+    }
+
+    .contact-info-title {
+      font-size: 1.1rem;
+      color: #252525;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .contact-info-list {
+      list-style: none;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .contact-info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-info-icon {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(0, 123, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: #007BFF;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-content h3 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      color: #252525;
+    }
+
+    .contact-info-content p {
+      color: #767676;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Form */
+    .contact-form-title {
+      font-size: 1.1rem;
+      color: #252525;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #252525;
+      font-size: 0.95rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #d1d1d1;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #007BFF;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .error-message {
+      color: #d13438;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .form-group.error .form-control {
+      border-color: #d13438;
+    }
+
+    .form-group.error .error-message {
+      display: block;
+    }
+
+    .submit-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #005a9e;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .submit-btn:disabled {
+      background-color: #767676;
+      cursor: not-allowed;
+    }
+
+    /* Success Message */
+    .success-message {
+      display: none;
+      background-color: rgba(16, 124, 16, 0.1);
+      border: 1px solid #107c10;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      color: #107c10;
+      font-weight: 500;
+      animation: fadeIn 0.5s ease;
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    /* Contact section social links */
+    #contact-section .big-social-links {
+      margin: 30px 0;
+    }
+
+    #contact-section .big-social-circle {
+      color: #007BFF;
+      background: whitesmoke;
+    }
+
+    #contact-section .big-social-circle:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    @media (max-width: 992px) {
+      #about-section .content-about {
+        flex-direction: column;
+      }
+
+      #about-section .bio,
+      #about-section .profile {
+        flex: 1 1 100%;
+        position: static;
+      }
+      
+      .contact-layout {
+        flex-direction: column;
+      }
+      
+      .map-section, .contact-section {
+        flex: 1 0 100%;
+        max-width: 100%;
+        order: unset;
+      }
+      
+      .map-frame-container {
+        min-height: 250px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body, html {
+        overflow-y: auto;
+        height: auto;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        position: static;
+      }
+
+      .logo {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        justify-content: center;
+        margin-bottom: 10px;
+        animation: none;
+      }
+
+      .initials {
+        font-size: 45px;
+      }
+
+      .fullname {
+        font-size: 10px;
+        padding: 1px 6px;
+      }
+
+      .navbar {
+        position: static;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .navbar a {
+        display: block;
+        margin: 8px auto;
+        font-size: 14px;
+        opacity: 1 !important;
+        animation: none !important;
+      }
+
+      .intro-section {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        min-height: auto;
+      }
+
+      .intro-container {
+        padding: 0 10px;
+      }
+
+      .intro-title {
+        font-size: 1.8rem;
+      }
+
+      .intro-subtitle,
+      #typewriter {
+        font-size: 1.3rem;
+      }
+      .intro-description {
+        font-size: 0.9rem;
+      }
+
+      .big-social-links {
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .big-social-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+      }
+
+      #about-section, #achievements-section, #contact-section {
+        padding: 2rem 1rem;
+        padding-left: 20px;
+      }
+      .about-header-wrapper h1 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+      }
+
+      .photo-card {
+        width: calc(50% - 1rem);
+      }
+      .achievements-title {
+        font-size: 2.5rem;
+      }
+      .achievements-subtitle {
+        font-size: 1.7rem;
+      }
+      .large-photo-card {
+        height: 360px;
+      }
+      
+      .map-frame-container {
+        min-height: 200px;
+      }
+
+      .map-overlay {
+        max-width: 180px;
+        padding: 8px;
+      }
+
+      #contact-section .big-social-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #about-section .profile-image-container {
+        width: 150px;
+        height: 150px;
+      }
+      .download-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .photo-card {
+        width: 100%;
+      }
+      .achievements-title {
+        font-size: 2rem;
+      }
+      .achievements-subtitle {
+        font-size: 1.5rem;
+      }
+      .large-photo-card {
+        height: 300px;
+      }
+      
+      .map-overlay {
+        display: none;
+      }
+
+      .map-header h2 {
+        font-size: 1rem;
+      }
+
+      .contact-header h2 {
+        font-size: 1.3rem;
+      }
+
+      #contact-section .big-social-links {
+        gap: 15px;
+      }
+
+      #contact-section .big-social-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+      }
+    }
+
+    /* Fallback media query for ultra-small devices */
+    @media (max-width: 360px) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .achievements-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .takeaway-heading {
+        font-size: 1rem;
+      }
+
+      .photo-card,
+      .align-fit {
+        width: 100% !important;
+      }
+
+      .large-photo-card {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="initials">KJ</span>
+      <span class="fullname">Kamau Johnson</span>
+    </div>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about-section">About</a>
+      <a href="#achievements-section">Achievements</a>
+      <a href="#contact-section">Contact</a> <!-- Updated to section ID instead of separate page -->
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="intro-section">
+      <div class="intro-container">
+        <h1 class="intro-title">Hi, I am <span class="name">Kamau Johnson</span></h1>
+        <h2 class="intro-subtitle">I am a</h2>
+        <div class="profession-container">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <p class="intro-description">
+          This individual is a passionate Computer Science enthusiast on the brink of success, driven by a desire to create meaningful and impactful software solutions.
+        </p>
+        <div class="big-social-links">
+          <a href="https://www.linkedin.com/in/kamau-johnson-4bab25276/" class="big-social-circle" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Johnson-Tech-droid" class="big-social-circle" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://x.com/FifaMontag" class="big-social-circle" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/+254768280952" class="big-social-circle" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="tel:+254768280952" class="big-social-circle"><i class="fas fa-phone"></i></a>
+          <a href="https://www.youtube.com/@fifamontage30" class="big-social-circle" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section Integrated Here -->
+    <section id="about-section">
+      <div class="about-header-wrapper">
+        <h1>ABOUT</h1>
+      </div>
+
+      <div class="content-about">
+        <div class="bio">
+          <div class="card">
+            <h2 class="section-title">Who Am I?</h2>
+            <p>
+              Johnson is a tech-savvy problem solver and soon-to-be Computer Science graduate with expertise in software
+              development, cybersecurity, and data science. He combines technical precision with creative design to build
+              secure, user-focused digital solutions. Passionate about solving real-world problems, Johnson focuses on
+              writing clean, maintainable code, designing intuitive interfaces, and engineering future-ready systems. Always
+              adapting to new technologies, he aims to make a lasting impact in the fast-evolving tech world.
+            </p>
+
+            <div class="horizontal-line"></div>
+
+            <h3 class="section-title">My Journey</h3>
+            <p>
+              I started as a self-taught developer, driven by curiosity and determination. After earning a diploma in
+              Computer Science from Zetech University, I'm now pursuing my Bachelor's at the Catholic University of Eastern
+              Africa, set to graduate in 2027. Through internships at
+              <a href="https://www.futureinterns.com" target="_blank">Future Interns</a>,
+              <a href="https://www.codealpha.tech/internship.html" target="_blank">Code Alpha</a>,
+              <a href="https://www.codsoft.in/internships" target="_blank">Codsoft</a>, and an industrial attachment at
+              <a href="https://acfc.co.ke/" target="_blank">Agro Chemical & Food Company Limited (ACFC)</a>, I've gained
+              hands-on experience in cybersecurity, Python development, and system security.
+            </p>
+            <div class="horizontal-line"></div>
+          </div>
+        </div>
+
+        <div class="profile">
+          <div class="profile-content">
+            <div class="profile-image-container">
+              <div class="profile-image-wrap">
+                <!-- Ensure 'pic.JPG' is in the same directory or update path -->
+                <img class="profile-image" src="pic.JPG" alt="Profile Photo - Kamau Johnson" />
+              </div>
+            </div>
+            <div class="card profile-info">
+              <p class="profile-title">COMPUTER SCIENTIST</p>
+              <div class="horizontal-line"></div>
+              <div style="margin-block-start: 1rem;">
+                <!-- Ensure 'Kamau Johnson's CV.pdf' is in the same directory or update path -->
+                <a href="Kamau Johnson's CV.pdf" download class="download-btn">Download CV</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section Added Here -->
+    <section id="achievements-section">
+      <div class="about-header-wrapper">
+        <h1 class="achievements-title">ACHIEVEMENTS</h1>
+      </div>
+      <h2 class="achievements-subtitle">What I have achieved so far</h2>
+
+      <div class="achievements-text">
+        <p>
+          During the start of my tech life in the year 2023, I was able to participate in various hackathons and won one of them:
+        </p>
+
+        <ul style="margin-top: 1rem; padding-left: 1.5rem; color: #4b5563; line-height: 1.8;">
+          <li>
+            In October 2024, I participated in my first hackathon, the <strong>Power Hacks Hackathon</strong>, representing <strong>SOSTOS Blog</strong>. Sponsored by <a href="https://powerlearnprojectafrica.org/" target="_blank">PLP</a>, <a href="https://www.safaricom.co.ke/" target="_blank">Safaricom</a>, <a href="https://www.spaceyatech.com/" target="_blank">SpaceYaTech</a>, <a href="https://payd.money/" target="_blank">Payd</a>, and others, we developed an app that verifies statement accuracy. I led full-stack development with <strong>HTML, CSS, JS, React Native, and PHP</strong>, delivering a user-friendly, secure platform that addressed misinformation. Despite being a first-time hackathon participant, we secured <strong>4th Runners-Up</strong>, which fueled my passion for tech innovation.
+          </li>
+
+          <li>
+            In April 2025, I took part in a Blockchain and Web3 Bootcamp held from April 25th to 29th, hosted by 
+            <a href="https://www.muiaa.com/" target="_blank">MUIAA</a>, 
+            <a href="https://nairobi.go.ke/" target="_blank">NairobiCountyGovernment</a>, and 
+            <a href="https://www.computeraid.org/" target="_blank">ComputerAidKenya</a>. We were introduced to <strong>Cypherium Blockchain</strong>—a next-generation blockchain built for enterprise and CBDC integration.
+
+            Alongside my teammates <strong>Risper, Mitau, and Keziah</strong>, we developed <strong>BebaPay</strong>, a tokenized recycling platform that rewards Nairobi residents for proper waste disposal. Despite being entirely new to the technology, we adapted quickly, and I was responsible for designing and implementing the <strong>smart contract layer</strong> that powered the platform's core functionality.
+
+            Our innovation earned us the <strong>First Runners-Up</strong> award and a <strong>$1000 cash prize</strong>, recognized for its technical execution, real-world relevance, and the collaborative effort that brought BebaPay to life.
+
+            <div class="takeaway-heading" style="margin-left: 1.5rem;">My Key Takeaways from the Bootcamp</div>
+            <ul class="star-bullet" style="margin-left: 2rem;">
+              <li>
+                Learned to build and deploy smart contracts using Cypherium's blockchain stack, and successfully launched our demo on a live testnet.
+              </li>
+              <li>
+                Sharpened my pitching techniques—learning to pitch under pressure and communicate complex ideas with clarity, confidence, and purpose in just minutes.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="large-photo-card">
+        <img src="BebaPay Hackathon.jpg" alt="Highlights">
+        <div class="photo-overlay">
+          <h3 class="photo-title">Highlight Achievement</h3>
+          <p class="photo-description">BebaPay - First Runners-Up at the Blockchain & Web3 Bootcamp</p>
+        </div>
+      </div>
+
+      <div class="photo-grid">
+        <div class="photo-card">
+          <img src="Power Hacks Hackathon.jpg" alt="Hackathon Achievement 1">
+          <div class="photo-overlay">
+            <h3 class="photo-title">Power Hacks Hackathon</h3>
+            <p class="photo-description">4th Runners-Up with SOSTOS Blog</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="Blockchain Bootcamp 1.png" alt="Hackathon Achievement 2">
+          <div class="photo-overlay">
+            <h3 class="photo-title">Blockchain & Web 3 Bootcamp</h3>
+            <p class="photo-description">Learning blockchain development</p>
+          </div>
+        </div>
+
+        <div class="photo-card align-fit">
+          <div class="img-wrapper">
+            <img class="fit-image" src="mypic.jpg" alt="Hackathon Achievement 3">
+          </div>
+          <div class="photo-overlay">
+            <h3 class="photo-title">Blockchain & Web 3 Hackathon</h3>
+            <p class="photo-description">BEBAPAY Solution</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Section Added Here -->
+      <div class="video-container">
+        <h3 class="video-title">Achievement Clips</h3>
+        <div class="video-wrapper">
+          <video class="achievement-video" controls poster="BebaPay Hackathon.jpg">
+            <source src="muiaa bootcamp.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section Added Here -->
+    <section id="contact-section">
+      <div class="about-header-wrapper">
+        <h1 class="achievements-title">CONTACT</h1>
+      </div>
+      <div class="contact-layout">
+        <!-- Map Section - LEFT SIDE -->
+        <div class="map-section" id="map-section">
+          <div class="map-container" id="map-container">
+            <div class="map-header">
+              <h2>My Location</h2>
+              <div class="map-actions">
+                <button class="map-action-btn" id="refresh-map" aria-label="Refresh map">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+                <button class="map-action-btn" id="expand-map" aria-label="Expand map">
+                  <i class="fas fa-expand-alt"></i>
+                </button>
+              </div>
+            </div>
+            <div class="map-frame-container" id="map-wrapper">
+              <iframe class="map-frame" id="map-frame"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.727808988747!2d36.76364871669336!3d-1.394994694419649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1fdf0384bbff%3A0xafe0c87e4ae63d14!2sVision%20Towers%2C%20Ongata%20Rongai%2C%20Kenya!5e0!3m2!1sen!2ske!4v1715675290001!5m2!1sen!2ske"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+              <div class="map-overlay">
+                <h3>Vision Towers</h3>
+                <p>Ongata Rongai, Kajiado County, Kenya</p>
+                <a href="https://www.google.com/maps/dir//JQ26%2BMPQ+Vision+Towers+Apartments,+Sironik+Road,+Ongata+Rongai/@-1.3982799,36.7592705,17z/data=!4m17!1m7!3m6!1s0x182f05293e9c5b6f:0x225914eb4952b66c!2sVision+Towers+Apartments!8m2!3d-1.3982853!4d36.7618454!16s%2Fg%2F11jbj5lk64!4m8!1m0!1m5!1m1!1s0x182f05293e9c5b6f:0x225914eb4952b66c!2m2!1d36.761837!2d-1.3982885!3e2?entry=ttu&g_ep=EgoyMDI1MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="directions-btn">
+                  <i class="fas fa-directions"></i>
+                  <span>Get Directions</span>
+                </a>
+              </div>
+            </div>
+            <div class="map-footer">
+              <span>© Google Maps</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Section - RIGHT SIDE -->
+        <div class="contact-section">
+          <div class="contact-container">
+            <div class="contact-header">
+              <h2>Get In Touch</h2>
+              <p>Have questions or want to work together? Reach out to me using the information below.</p>
+            </div>
+            <div class="contact-content">
+              <div class="contact-info">
+                <h3 class="contact-info-title">Contact Information</h3>
+                <ul class="contact-info-list">
+                  <li class="contact-info-item">
+                    <div class="contact-info-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info-content">
+                      <h3>Address</h3>
+                      <p>Ongata Rongai, Kajiado, Kenya</p>
+                    </div>
+                  </li>
+                  <li class="contact-info-item">
+                    <div class="contact-info-icon">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info-content">
+                      <h3>Email</h3>
+                      <p>johnsonkamau542@gmail.com</p>
+                    </div>
+                  </li>
+                  <li class="contact-info-item">
+                    <div class="contact-info-icon">
+                      <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-info-content">
+                      <h3>Phone</h3>
+                      <p>+254768280952</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Social Links -->
+              <div class="big-social-links">
+                <a href="https://www.linkedin.com/in/kamau-johnson-4bab25276/" class="big-social-circle" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Johnson-Tech-droid" class="big-social-circle" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/FifaMontag" class="big-social-circle" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/+254768280952" class="big-social-circle" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="tel:+254768280952" class="big-social-circle"><i class="fas fa-phone"></i></a>
+                <a href="https://www.youtube.com/@fifamontage30" class="big-social-circle" target="_blank"><i class="fab fa-youtube"></i></a>
+              </div>
+
+              <div class="contact-form">
+                <h3 class="contact-form-title">Send Me a Message</h3>
+                
+                <div class="success-message" id="success-message">
+                  Your message has been sent successfully! I'll get back to you soon.
+                </div>
+                
+                <form id="contact-form">
+                  <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
+                    <div class="error-message">Please enter your name</div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Your email address">
+                    <div class="error-message">Please enter a valid email address</div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this regarding?">
+                    <div class="error-message">Please enter a subject</div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Your message"></textarea>
+                    <div class="error-message">Please enter your message</div>
+                  </div>
+                  
+                  <button type="submit" id="submit-btn" class="submit-btn">
+                    <span>Send Message</span>
+                    <div class="spinner" id="spinner"></div>
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Typewriter effect
+    const professions = [
+        "Computer Scientist",
+        "Data Science Practitioner",
+        "Cyber Security Analyst",
+        "Graphics Designer",
+        "Web Developer"
+    ];
+    
+    const typewriterElement = document.getElementById('typewriter');
+    let currentProfession = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentText = professions[currentProfession];
+      if (isDeleting) {
+        typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => {
+          isDeleting = true;
+        }, 1000); // Pause before deleting the text
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        currentProfession = (currentProfession + 1) % professions.length; // Cycle through professions
+      }
+
+      setTimeout(type, isDeleting ? 100 : 150); // Adjust typing speed based on whether it's deleting or typing
+    }
+
+    type(); // Start typing effect
+    
+    // Contact form validation
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+    const spinner = document.getElementById('spinner');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitBtnText = submitBtn.querySelector('span');
+    const submitBtnIcon = submitBtn.querySelector('i');
+
+    function validateForm() {
+        let isValid = true;
+
+        document.querySelectorAll('.form-group').forEach(group => {
+            group.classList.remove('error');
+        });
+
+        const name = document.getElementById('name');
+        if (name.value.trim() === '') {
+            name.parentElement.classList.add('error');
+            isValid = false;
+        }
+
+        const email = document.getElementById('email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value.trim())) {
+            email.parentElement.classList.add('error');
+            isValid = false;
+        }
+
+        const subject = document.getElementById('subject');
+        if (subject.value.trim() === '') {
+            subject.parentElement.classList.add('error');
+            isValid = false;
+        }
+
+        const message = document.getElementById('message');
+        if (message.value.trim() === '') {
+            message.parentElement.classList.add('error');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (validateForm()) {
+                spinner.style.display = 'block';
+                submitBtnText.style.opacity = '0';
+                submitBtnIcon.style.display = 'none';
+                submitBtn.disabled = true;
+
+                const templateParams = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                emailjs.send('service_kamaujohnson', 'template_tl580zp', templateParams)
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+
+                        spinner.style.display = 'none';
+                        submitBtnText.style.opacity = '1';
+                        submitBtnIcon.style.display = 'inline-block';
+                        submitBtn.disabled = false;
+
+                        successMessage.style.display = 'block';
+                        contactForm.reset();
+
+                        setTimeout(function () {
+                            successMessage.style.display = 'none';
+                        }, 5000);
+                    }, function (error) {
+                        console.error('FAILED...', error);
+
+                        spinner.style.display = 'none';
+                        submitBtnText.style.opacity = '1';
+                        submitBtnIcon.style.display = 'inline-block';
+                        submitBtn.disabled = false;
+
+                        alert('There was an error sending your message. Please try again later.');
+                    });
+            }
+        });
+
+        const formInputs = document.querySelectorAll('.form-control');
+        formInputs.forEach(input => {
+            input.addEventListener('blur', function () {
+                if (input.id === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value.trim()) && input.value.trim() !== '') {
+                        input.parentElement.classList.add('error');
+                      !== '') {
+                        input.parentElement.classList.add('error');
+                    } else {
+                        input.parentElement.classList.remove('error');
+                    }
+                } else {
+                    if (input.value.trim() === '') {
+                        input.parentElement.classList.add('error');
+                    } else {
+                        input.parentElement.classList.remove('error');
+                    }
+                }
+            });
+
+            input.addEventListener('input', function () {
+                if (input.parentElement.classList.contains('error')) {
+                    if (input.id === 'email') {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (emailRegex.test(input.value.trim())) {
+                            input.parentElement.classList.remove('error');
+                        }
+                    } else {
+                        if (input.value.trim() !== '') {
+                            input.parentElement.classList.remove('error');
+                        }
+                    }
+                }
+            });
+        });
+    }
+    
+    // Map functionality
+    const refreshBtn = document.getElementById('refresh-map');
+    const expandBtn = document.getElementById('expand-map');
+    const mapFrame = document.getElementById('map-frame');
+    const mapContainer = document.getElementById('map-container');
+    
+    if (refreshBtn && expandBtn && mapFrame && mapContainer) {
+        const expandIcon = expandBtn.querySelector('i');
+
+        // Refresh Map Function
+        refreshBtn.addEventListener('click', function () {
+            const currentSrc = mapFrame.src;
+            mapFrame.src = currentSrc;
+        });
+
+        // Expand/Collapse Fullscreen Toggle
+        expandBtn.addEventListener('click', function () {
+            if (!document.fullscreenElement) {
+                mapContainer.requestFullscreen().then(() => {
+                    expandIcon.classList.remove('fa-expand-alt');
+                    expandIcon.classList.add('fa-compress-alt');
+                });
+            } else {
+                document.exitFullscreen().then(() => {
+                    expandIcon.classList.remove('fa-compress-alt');
+                    expandIcon.classList.add('fa-expand-alt');
+                });
+            }
+        });
+
+        // In case user exits fullscreen via ESC or browser controls
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                expandIcon.classList.remove('fa-compress-alt');
+                expandIcon.classList.add('fa-expand-alt');
+            }
+        });
+    }
+  });
+  </script>
+
+</body>
+</html>
